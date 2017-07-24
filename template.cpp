@@ -1,40 +1,44 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
 
 #if DEBUG && !ONLINE_JUDGE
-    #define debug(args...)  (Debugger()),args
-    class Debugger{
-        public:
-            Debugger(const string& _seperator = ", "):
-                fi(true),seperator(_seperator){}
-            template<typename T> Debugger& operator , (const T& v){
-                if(!fi)
-                    cerr<<seperator;
-                cerr<<v;
-                fi=false;
-                return *this;
-            }
-            ~Debugger() {cerr<<endl;}
-        private:
-            bool fi;
-            string seperator;
-    };
-    #define DBG(x) {cerr << #x << " = "; debug(x);}
-    template<typename T> inline ostream& operator << (ostream& os,const vector<T>& v){
-        bool fi=true;
-        os<<"[";
-        for(auto i:v){
-            if(!fi)
-                os<<", ";
-            os<<i;
-            fi=false;
-        }
-        return os<<"]";
-    }
+    #include "debug.h"
 #else
-    #define debug(args...)
-    #define DBG(x)
+    #define debug(...)
 #endif
+
+template<typename T>
+void _R(T &x){cin>>x;}
+void _R(int &x){scanf("%d",&x);}
+void _R(long long &x){scanf("%lld",&x);}
+void _R(double &x){scanf("%lf",&x);}
+void _R(char &x){scanf("%c",&x);}
+void _R(char *x){scanf("%s",x);}
+void R(){}
+template<typename T,typename... K>
+void R(T& head,K&... tail){_R(head);R(tail...);}
+
+template<typename T>
+void _W(const T &x,const char c){cout<<x;}
+void _W(const int &x,const char c){printf("%d",x);}
+void _W(const long long &x,const char c){printf("%lld",x);}
+void _W(const double &x,const char c){printf("%lf",x);}
+void _W(const char &x,const char c){printf("%c",x);}
+void _W(const char *x,const char c){printf("%s",x);}
+template<typename T>
+void _W(const vector<T> &x,const char c){
+    for(auto it=x.cbegin();it!=x.cend();it++){
+        if(it!=x.cbegin())putchar(c);
+        _W(*it,c);
+    }
+}
+void W(){}
+template<typename T,typename... K>
+void W(const T& head,const K&... tail){
+    _W(head,' ');
+    putchar(sizeof...(tail)?' ':'\n');
+    W(tail...);
+}
 
 typedef vector<int> vi;
 typedef pair<int,int> ii;
@@ -49,8 +53,8 @@ typedef long long lli;
 #define IT iterator
 #define PQ priority_queue
 #define GI greater<int>
-#define _1 first
-#define _2 second
+#define fi first
+#define se second
 #define FOR(i,a,b) for(int i=(a);i<=(b);i++)
 #define REP(i,a) FOR(i,0,(int)(a)-1)
 #define FORd(i,a,b) for(int i=(b);i>=(a);i--)
@@ -58,8 +62,8 @@ typedef long long lli;
 #define all(x) x.begin(), x.end()
 #define uni(x) x.erase(unique(all(x)), x.end())
 #define sqr(x) ((x)*(x))
-#define L(x) ((x)<<1)
-#define R(x) (((x)<<1)+1)
+#define LC(x) ((x)<<1)
+#define RC(x) (((x)<<1)+1)
 #define EPS 1e-9
 #define EULER 2.7182818284
 #define MOD 1000000007
@@ -84,12 +88,11 @@ int main(void){
     cin.tie(NULL);
     cout.precision(20);
 	preprocess();
-	int t;
-	//cin>>t;
-	t=1;
-	FOR(z,1,t){
-		//printf("Case #%d: ",z);
-        
+	int teeee;
+	//cin>>teeee;
+	teeee=1;
+	FOR(zeeee,1,teeee){
+		//printf("Case #%d: ",zeeee);
 	}
 	return 0;
 }
