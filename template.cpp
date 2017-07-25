@@ -9,42 +9,18 @@ using namespace std;
 
 template<typename T>
 void _R(T &x){cin>>x;}
-void _R(int &x){scanf("%d",&x);}
-void _R(long long &x){scanf("%lld",&x);}
-void _R(double &x){scanf("%lf",&x);}
-void _R(char &x){scanf("%c",&x);}
-void _R(char *x){scanf("%s",x);}
 template<typename T>
-void _R(vector<T> &x){
-    for(auto it=x.begin();it!=x.end();it++){
-        _R(*it);
-    }
-}
+void _R(vector<T> &x){for(auto it=x.begin();it!=x.end();it++){_R(*it);}}
 void R(){}
 template<typename T,typename... K>
 void R(T& head,K&... tail){_R(head);R(tail...);}
-
 template<typename T>
 void _W(const T &x,const char c){cout<<x;}
-void _W(const int &x,const char c){printf("%d",x);}
-void _W(const long long &x,const char c){printf("%lld",x);}
-void _W(const double &x,const char c){printf("%lf",x);}
-void _W(const char &x,const char c){printf("%c",x);}
-void _W(const char *x,const char c){printf("%s",x);}
 template<typename T>
-void _W(const vector<T> &x,const char c){
-    for(auto it=x.cbegin();it!=x.cend();it++){
-        if(it!=x.cbegin())putchar(c);
-        _W(*it,c);
-    }
-}
+void _W(const vector<T> &x,const char c){for(auto it=x.cbegin();it!=x.cend();it++){if(it!=x.cbegin())putchar(c);_W(*it,c);}}
 void W(){}
 template<typename T,typename... K>
-void W(const T& head,const K&... tail){
-    _W(head,' ');
-    putchar(sizeof...(tail)?' ':'\n');
-    W(tail...);
-}
+void W(const T& head,const K&... tail){_W(head,' ');cout<<(sizeof...(tail)?' ':'\n');W(tail...);}
 
 typedef vector<int> vi;
 typedef pair<int,int> ii;
@@ -80,9 +56,7 @@ template<typename T> inline void amin(T& x,T y) {if(x>y)x=y;}
 template<typename T> inline void amax(T& x,T y) {if(x<y)x=y;}
 template<typename A,typename B>
 class comp{public:bool operator()(const pair<A,B> &a, const pair<A,B> &b){
-if(a.fi!=b.fi)return a.fi<b.fi;
-else return a.fi>b.fi;
-}};
+if(a.fi!=b.fi)return a.fi<b.fi;else return a.fi>b.fi;}};
 //global variables
 
 //end global variables
