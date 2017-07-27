@@ -20,7 +20,7 @@ template<typename T>
 void _W(const vector<T> &x,const char c){for(auto it=x.cbegin();it!=x.cend();it++){if(it!=x.cbegin())putchar(c);_W(*it,c);}}
 void W(){}
 template<typename T,typename... K>
-void W(const T& head,const K&... tail){_W(head,' ');cout<<(sizeof...(tail)?' ':'\n');W(tail...);}
+void W(const T& head,const K&... tail){_W(head,' ');cout<<(sizeof...(tail)?' ':'\n')<<flush;W(tail...);}
 
 typedef vector<int> vi;
 typedef pair<int,int> ii;
@@ -34,7 +34,7 @@ typedef long long lli;
 #define pb push_back
 #define IT iterator
 #define PQ priority_queue
-#define GI greater<int>
+#define GR greater
 #define fi first
 #define se second
 #define FOR(i,a,b) for(int i=(a);i<=(b);i++)
@@ -78,5 +78,6 @@ int main(void){
     FOR(zeeee,1,teeee){
         //printf("Case #%d: ",zeeee);
     }
+    cerr<<(clock()/(double)CLOCKS_PER_SEC)<<endl;
     return 0;
 }
