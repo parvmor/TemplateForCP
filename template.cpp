@@ -2,7 +2,7 @@
 using namespace std;
 
 #if DEBUG && !ONLINE_JUDGE
-    #include "debug.h"
+    #include "../debug.h"
 #else
     #define debug(...)
 #endif
@@ -57,6 +57,10 @@ template<typename T> inline void amax(T& x,T y) {if(x<y)x=y;}
 template<typename A,typename B>
 class comp{public:bool operator()(const pair<A,B> &a, const pair<A,B> &b){
 if(a.fi!=b.fi)return a.fi<b.fi;else return a.fi>b.fi;}};
+lli fast_exp(lli a,lli b){lli res=1;
+while(b){if(b&1LL){res*=a;res%=MOD;}
+b>>=1LL;a*=a;a%=MOD;}
+return res;}
 //global variables
 
 //end global variables
@@ -73,11 +77,11 @@ int main(void){
     cout.precision(20);
     preprocess();
     int teeee;
-    //cin>>teeee;
     teeee=1;
+    //cin>>teeee;
     FOR(zeeee,1,teeee){
         //printf("Case #%d: ",zeeee);
     }
-    cerr<<(clock()/(double)CLOCKS_PER_SEC)<<endl;
+    cerr<<((double)clock()/(double)CLOCKS_PER_SEC)<<endl;
     return 0;
 }
